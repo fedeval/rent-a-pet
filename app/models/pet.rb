@@ -7,5 +7,5 @@ class Pet < ApplicationRecord
   validates :description, presence: true
   validates :price_per_day, presence: true, numericality: { greater_than: 0 }
   validates :location, presence: true
-  validates :available, presence: true 
+  validates :available, presence: true
 end

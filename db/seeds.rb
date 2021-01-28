@@ -12,7 +12,7 @@ Pet.destroy_all
 
 puts "Creating pets..."
 # generate 20 pets
-(1..5).each do |id|
+(1..10).each do |id|
     Pet.create!(
 # each user is assigned an id from 1-20
         id: id,
@@ -20,7 +20,7 @@ puts "Creating pets..."
         species: ['cat','dog','monkey','lizard','snake','koala'].sample,
         available: true,
         age: [1,2,3].sample,
-        description: Faker::Lorem.words(number: 4),
+        description: Faker::Lorem.sentence(word_count: 10),
         price_per_day: [10,20,30].sample,
         location: Faker::Address.city,
         user_id: '1',

@@ -1,7 +1,11 @@
 <h1>Pets!!!</h1>
-  <ul>
-    <% @pets.each do |pet| %>
-      <p><%= pet.name %> <%= link_to "New pet", new_pet_path(@pet) %></p>
-      <p><%= pet.species %></p>
-    <% end %>
-  </ul>
+<ul>
+<% @pets.each do |pet| %>
+    <li>
+      <%= link_to pet.name, pet_path(pet) %> | <%= link_to "Delete", pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= link_to "New pet", new_pet_path(@pet) %>

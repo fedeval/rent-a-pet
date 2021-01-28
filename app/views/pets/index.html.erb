@@ -1,7 +1,7 @@
 <h1>Pets!!!</h1>
-<ul>
-<% @pets.each do |pet| %>
-<p><%= pet.name %> <%= link_to "New pet", new_pet_path(@pet) %></p>
-<p><%= pet.species %></p>
-<% end %>
-</ul>
+  <ul>
+    <% @pets.each do |pet| %>
+      <p><%= pet.name %> <%= link_to "New pet", new_pet_path(@pet) %></p>
+      <p><%= pet.species %></p>
+    <% end %>
+  </ul>

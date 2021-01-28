@@ -1,6 +1,9 @@
 class Pet < ApplicationRecord
   SPECIES = %w[cat dog monkey lizard snake koala].freeze
 
+  belongs_to :user
+
+  validates :user_id, presence: true
   validates :name, presence: true
   validates :species, presence: true, inclusion: { in: SPECIES }
   validates :age, presence: true, numericality: { greater_than: 0 }

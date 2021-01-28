@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
   def index
+    @pets = policy_scope(Pet)
   end
 
   def show

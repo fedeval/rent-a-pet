@@ -3,6 +3,8 @@ class Pet < ApplicationRecord
 
   belongs_to :user
 
+  has_many :bookings
+
   validates :user_id, presence: true
   validates :name, presence: true
   validates :species, presence: true, inclusion: { in: SPECIES }

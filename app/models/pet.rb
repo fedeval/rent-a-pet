@@ -2,6 +2,7 @@ class Pet < ApplicationRecord
   SPECIES = %w[cat dog monkey lizard snake koala].freeze
 
   belongs_to :user
+  has_many :bookings
 
   validates :user_id, presence: true
   validates :name, presence: true

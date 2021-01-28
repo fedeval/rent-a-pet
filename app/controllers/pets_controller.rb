@@ -19,6 +19,7 @@ class PetsController < ApplicationController
 
   def destroy
     @pet = Pet.find(params[:id])
+    authorize @pet
     @pet.destroy
     redirect_to pets_path
   end

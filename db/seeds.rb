@@ -23,7 +23,7 @@ puts "Creating pets..."
         description: Faker::Lorem.words(number: 4),
         price_per_day: [10,20,30].sample,
         location: Faker::Address.city,
-        user_id: [1,2,3].sample,
+        user_id: '1',
     )
 end
 puts "Finished!"

@@ -4,4 +4,7 @@ class PetPolicy < ApplicationPolicy
       scope.all
     end
   end
+  def destroy?
+    record.user == user
+  end
 end

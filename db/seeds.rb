@@ -5,4 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-pet = Pet.create(name: "Poochy", species: "dog", age: 12, description: "slow", price_per_day: 5, location: "Berlin", available: true)
+require 'faker'
+
+puts "Cleaning database..."
+Pet.destroy_all
+
+puts "Creating pets..."
+# generate 20 pets
+(1..5).each do |id|
+    Pet.create!(
+# each user is assigned an id from 1-20
+        id: id,
+        name: Faker::Name.name,
+        species: ['cat','dog','monkey','lizard','snake','koala'].sample,
+        available: true,
+        age: [1,2,3].sample,
+        description: Faker::Lorem.words(number: 4),
+        price_per_day: [10,20,30].sample,
+        location: Faker::Address.city,
+        user_id: '1',
+    )
+end
+puts "Finished!"

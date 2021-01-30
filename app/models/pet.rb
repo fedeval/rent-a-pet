@@ -3,7 +3,7 @@ class Pet < ApplicationRecord
 
   belongs_to :user
 
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
   geocoded_by :location
@@ -16,5 +16,5 @@ class Pet < ApplicationRecord
   validates :description, presence: true
   validates :price_per_day, presence: true, numericality: { greater_than: 0 }
   validates :location, presence: true
-  validates :available, presence: true 
+  validates :available, presence: true
 end

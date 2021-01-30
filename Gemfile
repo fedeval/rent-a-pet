@@ -26,6 +26,10 @@ gem 'devise'
 # gem 'image_processing', '~> 1.2'
 gem 'faker'
 
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -64,3 +68,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Pundit for authentication
 gem 'pundit'
+
+# Geocoder for the map
+gem 'geocoder'

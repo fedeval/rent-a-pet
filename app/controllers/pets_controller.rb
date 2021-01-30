@@ -3,6 +3,14 @@ class PetsController < ApplicationController
 
   def index
     @pets = policy_scope(Pet)
+
+    @markers = @pets.geocoded.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { pet: pet })
+      }
+    end
   end
 
   def show
@@ -20,7 +28,7 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
-    if @pet.save
+    if @pet.save!
       redirect_to pet_path(@pet)
     else
       render :new
@@ -46,6 +54,6 @@ class PetsController < ApplicationController
   def pet_params
     params.require(:pet).permit(:name, :species, :age,
                                 :description, :price_per_day, :location,
-                                :available)
+                                :available, :photo)
   end
 end

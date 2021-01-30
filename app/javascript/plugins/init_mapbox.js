@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -22,6 +23,10 @@ const initMapbox = () => {
 
     // Fit map to markers locations
     fitMapToMarkers(map, markers);
+
+    // Enable search in the map
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+                                        mapboxgl: mapboxgl }));
   }
 };
 

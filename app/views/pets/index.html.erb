@@ -1,4 +1,4 @@
-<h1>Pets!!!</h1>
+<!-- <h1>Pets!!!</h1> -->
 <div class="main-container">
   <div class="pets-grid">
     <% @pets.each do |pet| %>
@@ -6,13 +6,13 @@
           <%= link_to pet.name, pet_path(pet) %> | <%= link_to "Delete", pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
     <% end %>
+<%= link_to "New pet", new_pet_path(@pet) %>
   </div>
 
   <div id="map"
-     style="width: 400px; height: 600px;"
+     style="width: 400px; height: 75vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  
+
 </div>
 
-<%= link_to "New pet", new_pet_path(@pet) %>

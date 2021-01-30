@@ -1,2 +1,42 @@
 // Import page-specific CSS files here.
 @import "home";
+
+@media(min-width: 992px) {
+  .pets-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 992px) {
+  .pets-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .pets-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.main-container {
+  display: flex
+}
+
+.pets-card {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pets-grid {
+  display: grid;
+  grid-gap: 16px;
+  margin: 16px;
+  flex-grow: 1;
+}

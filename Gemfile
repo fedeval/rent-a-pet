@@ -68,3 +68,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Pundit for authentication
 gem 'pundit'
+
+# Geocoder for the map
+gem 'geocoder'

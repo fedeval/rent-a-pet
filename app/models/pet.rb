@@ -5,6 +5,9 @@ class Pet < ApplicationRecord
 
   has_many :bookings
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   validates :user_id, presence: true
   validates :name, presence: true
   validates :species, presence: true, inclusion: { in: SPECIES }
@@ -12,8 +15,5 @@ class Pet < ApplicationRecord
   validates :description, presence: true
   validates :price_per_day, presence: true, numericality: { greater_than: 0 }
   validates :location, presence: true
-  validates :available, presence: true
- 
-  geocoded_by :location
-  after_validation :geocode, if: :will_save_change_to_location?
+  validates :available, presence: true 
 end

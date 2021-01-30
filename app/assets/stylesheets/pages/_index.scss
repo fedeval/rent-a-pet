@@ -19,6 +19,10 @@
   }
 }
 
+.main-container {
+  display: flex
+}
+
 .pets-card {
   background-size: cover;
   background-position: center;
@@ -33,17 +37,13 @@
 .pets-grid {
   display: grid;
   grid-gap: 16px;
-  flex-grow: 1;
   margin: 16px;
+  flex-grow: 1;
 }
 
 #map {
   margin-top: 16px;
-  height: 100vh;
   position: sticky;
   top:10px;
 }
 
-.main-container {
-  display: flex
-}

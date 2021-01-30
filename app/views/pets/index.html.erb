@@ -1,11 +1,17 @@
 <h1>Pets!!!</h1>
-<ul>
-<% @pets.each do |pet| %>
-    <li>
-      <%= link_to pet.name, pet_path(pet) %> | <%= link_to "Delete", pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
-  <% end %>
-</ul>
+<div class="main-container">
+  <div class="pets-grid">
+    <% @pets.each do |pet| %>
+        <div class="pets-card">
+          <%= link_to pet.name, pet_path(pet) %> | <%= link_to "Delete", pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+    <% end %>
+  </div>
 
+  <div class="map">
+    <h1>Map</h1>
+  </div>
+  
+</div>
 
 <%= link_to "New pet", new_pet_path(@pet) %>

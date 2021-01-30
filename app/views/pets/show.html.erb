@@ -1,4 +1,5 @@
 <h1> <%= @pet.name %> </h1>
+<p><%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %></p>
 <p>Species: <%=  @pet.species %> </p>
 <p>Age: <%=  @pet.age %> </p>
 <p>Description: <%=  @pet.description %> </p>

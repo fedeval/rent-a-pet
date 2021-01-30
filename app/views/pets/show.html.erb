@@ -6,4 +6,23 @@
 <p>Price per day: <%=  @pet.price_per_day %> </p>
 <p>Location: <%=  @pet.location %> </p>
 <p>Availability: <%=  @pet.available%> </p>
+<br>
+<p><%= @pet.name %> is already booked on the following dates:</p>
+<br>
+<% @pet.bookings.each do |booking| %>
+<p>From: <%= booking.start_date %> to: <%= booking.end_date %></p>
+<% end %>
+<br>
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <h2>Pick your dates</h2>
+
+    <%= simple_form_for [@pet, @booking] do |f| %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.button :submit, "Go", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<br>
 <%= link_to 'Back to all pets', pets_path %>

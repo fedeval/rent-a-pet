@@ -1,28 +1,41 @@
 <h1> <%= @pet.name %> </h1>
-<p><%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %></p>
-<p>Species: <%=  @pet.species %> </p>
-<p>Age: <%=  @pet.age %> </p>
-<p>Description: <%=  @pet.description %> </p>
-<p>Price per day: <%=  @pet.price_per_day %> </p>
-<p>Location: <%=  @pet.location %> </p>
-<p>Availability: <%=  @pet.available%> </p>
-<br>
-<p><%= @pet.name %> is already booked on the following dates:</p>
-<br>
-<% @pet.bookings.each do |booking| %>
-<p>From: <%= booking.start_date %> to: <%= booking.end_date %></p>
-<% end %>
-<br>
-<div class="container">
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-    <h2>Pick your dates</h2>
-
-    <%= simple_form_for [@pet, @booking] do |f| %>
-      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Go", class: "btn btn-primary" %>
-    <% end %>
+<div class="row">
+  <div class="col-12 col-lg-6">
+    <p><%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill %></p>
+    <br>
+    <div class="show-card">
+      <h5>Species:</h5>
+      <p><%=  @pet.species %> </p>
+      <h5>Age:</h5>
+      <p><%=  @pet.age %> </p>
+      <h5>Description:</h5>
+      <p><%=  @pet.description %> </p>
+      <h5>Price per day:</h5>
+      <p><%=  @pet.price_per_day %> </p>
+      <h5>Location:</h5>
+      <p><%=  @pet.location %> </p>
+      <h5>Availability:</h5>
+      <p><%=  @pet.available%> </p>
+    </div>
   </div>
+
+  <div class="col-12 col-lg-6">
+    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <h2>Pick your dates</h2>
+
+      <%= simple_form_for [@pet, @booking] do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Book your friend now!", class: "main-btn" %>
+      <% end %>
+    </div>
+      <br>
+      <p><%= @pet.name %> is already booked on the following dates:</p>
+      <% @pet.bookings.each do |booking| %>
+      <p>From: <%= booking.start_date %> to: <%= booking.end_date %></p>
+      <% end %>
+  </div>
+
 </div>
 <br>
 <%= link_to 'Back to all pets', pets_path %>

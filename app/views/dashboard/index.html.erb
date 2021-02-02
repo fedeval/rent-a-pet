@@ -1,0 +1,39 @@
+<div class="dashboard-container">
+  <div class="user-bookings">
+    <h2>My bookings:</h2>
+    <% @bookings.each do |booking| %>
+    <ul>
+      <li>
+        <p>From: <%=  booking.start_date %></p>
+        <p>To: <%=  booking.end_date %></p> 
+        <p>Pet: <%= booking.pet.name %></p>
+        <p>Request status: <%= "Pending" if booking.confirmed.nil?  %></p>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+
+  <div class="user-pets">
+    <h2>My pets:</h2>
+    <% @user_pets.each do |pet| %>
+    <ul>
+      <li>
+        <p>Pet: <%= pet.name %></p> 
+        <p>Pet booking requests:</p>
+        <% pet.bookings.each do |booking| %>
+        <ul>
+          <li>
+            <p>From: <%=  booking.start_date %></p>
+            <p>To: <%=  booking.end_date %></p> 
+            <p>Requested By: <%=  "#{booking.user.first_name} #{booking.user.last_name}" %></p> 
+            <p>Request status: <%= "Pending" if booking.confirmed.nil?  %></p>
+          </li>
+        </ul>
+      <% end %>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'All Pets', pets_path %>

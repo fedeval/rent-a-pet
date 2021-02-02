@@ -9,14 +9,12 @@
         <p>Pet: <%= booking.pet.name %></p>
         <p>
           Request status: <% if booking.confirmed.nil? %> 
-                            <%= 'Pending' %> 
-                          <% elsif booking.confirmed %>
-                            <%= 'Accepted' %>  
-                          <% else %>
-                            <%= 'Denied' %>
-                          <% end %>
-          <%= link_to 'Accept', accept_booking_path(booking) %>
-          <%= link_to 'Deny', deny_booking_path(booking) %>
+            <%= 'Pending' %> 
+          <% elsif booking.confirmed %>
+            <%= 'Accepted' %>  
+          <% else %>
+            <%= 'Denied' %>
+          <% end %>
         </p>
       </li>
     </ul>
@@ -36,7 +34,17 @@
             <p>From: <%=  booking.start_date %></p>
             <p>To: <%=  booking.end_date %></p> 
             <p>Requested By: <%=  "#{booking.user.first_name} #{booking.user.last_name}" %></p> 
-            <p>Request status: <%= booking.confirmed.nil? ? 'Pending' : 'Accepted' %></p>
+            <p>
+              Request status: <% if booking.confirmed.nil? %> 
+                  <%= 'Pending' %> 
+                <% elsif booking.confirmed %>
+                  <%= 'Accepted' %>  
+                <% else %>
+                  <%= 'Denied' %>
+                <% end %>
+              <%= link_to 'Accept', accept_booking_path(booking) %>
+              <%= link_to 'Deny', deny_booking_path(booking) %>
+            </p>
           </li>
         </ul>
       <% end %>

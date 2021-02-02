@@ -10,10 +10,10 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def accept?
-    record.user == user
+    record.pet.user == user
   end
 
   def deny?
-    record.user == user
+    record.pet.user == user
   end
 end

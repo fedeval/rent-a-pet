@@ -16,6 +16,15 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.confirmed = true
+    @booking.save
+
+    authorize @booking
+    redirect_to dashboard_index_path
+  end
+  
   private
 
   def booking_params

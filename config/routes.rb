@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   resources :pets do
     resources :bookings, only: [:create]
   end
+  resources :bookings, only: [] do
+    member do
+      get :accept
+    end
+  end
   resources :dashboard, only: [:index]
 end

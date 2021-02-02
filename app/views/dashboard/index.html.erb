@@ -7,7 +7,7 @@
         <p>From: <%=  booking.start_date %></p>
         <p>To: <%=  booking.end_date %></p> 
         <p>Pet: <%= booking.pet.name %></p>
-        <p>Request status: <%= "Pending" if booking.confirmed.nil?  %></p>
+        <p>Request status: <%= booking.confirmed.nil? ? 'Pending' : 'Accepted' %> <%= link_to 'Accept', accept_booking_path(booking) %></p>
       </li>
     </ul>
     <% end %>

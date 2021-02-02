@@ -6,24 +6,37 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+addresses = [
+            "Rudi-Dutschke-Straße 26, 10969 Berlin, Germany",
+            "Tauentzienstraße 21-24, 10789 Berlin, GermanyTauentzienstraße 21-24, 10789 Berlin, Germany",
+            "Alexanderplatz, 10178 Berlin, Germany",
+            "Schumannstraße 13A, 10117 Berlin, Germany",
+            "Mercedes-Platz 1, 10243 Berlin, Germany",
+            "Str. des 17. Juni, 10785 Berlin, Germany",
+            "Platz der Luftbrücke 5, 12101 Berlin, Germany",
+            "Klosterstraße 62, 10179 Berlin, Germany",
+            "Schönhauser Allee 180, 10119 Berlin, Germany",
+            "Saarbrücker Str. 37a, 10405 Berlin, Germany"
+]
+c = 0
 
 puts "Cleaning database..."
 Pet.destroy_all
 
 puts "Creating pets..."
 # generate 20 pets
-(1..10).each do |id|
+10.times do
     Pet.create!(
-# each user is assigned an id from 1-20
-        id: id,
         name: Faker::Name.name,
         species: ['cat','dog','monkey','lizard','snake','koala'].sample,
         available: true,
         age: [1,2,3].sample,
         description: Faker::Lorem.sentence(word_count: 10),
         price_per_day: [10,20,30].sample,
-        location: Faker::Address.city,
-        user_id: '1',
+        # location: Faker::Address.full_address,
+        location: addresses[c],
+        user_id: 1,
     )
+    c += 1
 end
 puts "Finished!"

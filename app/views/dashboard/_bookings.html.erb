@@ -1,0 +1,21 @@
+  <div class="user-bookings">
+    <h2>My bookings:</h2>
+    <% @bookings.each do |booking| %>
+    <ul>
+      <li>
+        <p>From: <%=  booking.start_date %></p>
+        <p>To: <%=  booking.end_date %></p> 
+        <p>Pet: <%= booking.pet.name %></p>
+        <p>
+          Request status: <% if booking.confirmed.nil? %> 
+            <%= 'Pending' %> 
+          <% elsif booking.confirmed %>
+            <%= 'Accepted' %>  
+          <% else %>
+            <%= 'Denied' %>
+          <% end %>
+        </p>
+      </li>
+    </ul>
+    <% end %>
+  </div>

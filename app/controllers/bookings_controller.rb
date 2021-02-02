@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
+  before_action :find_booking, only: [:accept, :deny]
 
   def create
     @pet = Pet.find(params[:pet_id])
@@ -17,7 +18,6 @@ class BookingsController < ApplicationController
   end
 
   def accept
-    @booking = Booking.find(params[:id])
     @booking.confirmed = true
     @booking.save
 
@@ -26,7 +26,6 @@ class BookingsController < ApplicationController
   end
 
   def deny
-    @booking = Booking.find(params[:id])
     @booking.confirmed = false
     @booking.save
 
@@ -38,5 +37,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def find_booking
+    @booking = Booking.find(params[:id])
   end
 end

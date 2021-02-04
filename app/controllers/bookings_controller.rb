@@ -20,9 +20,9 @@ class BookingsController < ApplicationController
   def accept
     @booking.confirmed = true
     @booking.save
-
+    
     authorize @booking
-    redirect_to dashboard_index_path
+    redirect_to dashboard_index_path(view: 'pets')
   end
 
   def deny
@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
     @booking.save
 
     authorize @booking
-    redirect_to dashboard_index_path
+    redirect_to dashboard_index_path(view: 'pets')
   end
   
   private

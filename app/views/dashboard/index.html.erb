@@ -1,8 +1,21 @@
-<div class="container">
-  <br>
-  <%= link_to "My Pets", dashboard_index_path(view: "pets"), class: 'btn btn-primary' %>  <%= link_to "My Bookings", dashboard_index_path(view: "bookings") , class: 'btn btn-primary' %>
-  <br><br> 
-  <%= render 'pets' if params[:view] == 'pets' %>
-  <%= render 'bookings' if params[:view] == 'bookings' %>
-  <%= link_to 'All Pets', pets_path %>
+<div class="dashboard-wrapper">
+  
+  <div class="container">
+
+    <div class="header">
+      <h1>Hi <%= @user.first_name %> <%= @user.last_name %></h1>
+    </div>
+    <br>
+
+    <div class="dashboard-main">
+      <div class="dashboard-buttons">
+        <%= link_to "My Pets", dashboard_index_path(view: "pets"), class: 'btn btn-primary' %>  <%= link_to "My Bookings", dashboard_index_path(view: "bookings") , class: 'btn btn-primary' %>
+      </div>
+      
+      <%= render 'pets' if params[:view] == 'pets' %>
+      <%= render 'bookings' if params[:view] == 'bookings' %>
+      <%= link_to 'All Pets', pets_path %>
+      
+    </div>
+  </div>
 </div>

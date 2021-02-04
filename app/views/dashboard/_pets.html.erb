@@ -14,13 +14,13 @@
             <p>
               Request status: <% if booking.confirmed.nil? %> 
                   <%= 'Pending' %> 
+                  <%= link_to 'Accept', accept_booking_path(booking) %>
+                  <%= link_to 'Deny', deny_booking_path(booking) %>
                 <% elsif booking.confirmed %>
                   <%= 'Accepted' %>  
                 <% else %>
                   <%= 'Denied' %>
                 <% end %>
-              <%= link_to 'Accept', accept_booking_path(booking) %>
-              <%= link_to 'Deny', deny_booking_path(booking) %>
             </p>
           </li>
         </ul>

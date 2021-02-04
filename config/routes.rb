@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   # delete "pets/:id", to: "pets#destroy"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :pets do
-    resources :bookings, only: [ :create]
+    resources :bookings, only: [:create]
   end
+  resources :bookings, only: [] do
+    member do
+      get :accept
+      get :deny
+    end
+  end
+  resources :dashboard, only: [:index]
 end

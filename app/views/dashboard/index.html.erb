@@ -1,0 +1,8 @@
+<div class="container">
+  <br>
+  <%= link_to "My Pets", dashboard_index_path(view: "pets"), class: 'btn btn-primary' %>  <%= link_to "My Bookings", dashboard_index_path(view: "bookings") , class: 'btn btn-primary' %>
+  <br><br> 
+  <%= render 'pets' if params[:view] == 'pets' %>
+  <%= render 'bookings' if params[:view] == 'bookings' %>
+  <%= link_to 'All Pets', pets_path %>
+</div>

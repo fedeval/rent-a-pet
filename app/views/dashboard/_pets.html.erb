@@ -1,0 +1,31 @@
+<div class="user-pets">
+    <h2>My pets:</h2>
+    <% @user_pets.each do |pet| %>
+    <ul>
+      <li>
+        <p>Pet: <%= pet.name %></p> 
+        <p>Pet booking requests:</p>
+        <% pet.bookings.each do |booking| %>
+        <ul>
+          <li>
+            <p>From: <%=  booking.start_date %></p>
+            <p>To: <%=  booking.end_date %></p> 
+            <p>Requested By: <%=  "#{booking.user.first_name} #{booking.user.last_name}" %></p> 
+            <p>
+              Request status: <% if booking.confirmed.nil? %> 
+                  <%= 'Pending' %> 
+                <% elsif booking.confirmed %>
+                  <%= 'Accepted' %>  
+                <% else %>
+                  <%= 'Denied' %>
+                <% end %>
+              <%= link_to 'Accept', accept_booking_path(booking) %>
+              <%= link_to 'Deny', deny_booking_path(booking) %>
+            </p>
+          </li>
+        </ul>
+      <% end %>
+      </li>
+    </ul>
+    <% end %>
+  </div>

@@ -8,4 +8,12 @@ class BookingPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def accept?
+    record.pet.user == user
+  end
+
+  def deny?
+    record.pet.user == user
+  end
 end

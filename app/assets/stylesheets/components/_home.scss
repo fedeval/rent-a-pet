@@ -4,20 +4,45 @@ background-size: cover;
 }
 
 h1 {
-text-align: center;
-margin-top: 25px;
+  text-align: center;
+  margin-top: 25px;
 }
 
 .description {
-display: flex;
-justify-content: space-around;
-align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .card {
-width: 250px;
-height: 200px;
-text-align: center;
-padding: 10px;
-margin-top: 20px;
+  width: 250px;
+  height: 200px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #F4F4F4;
+  border-style: none;
 }
+
+.banner {
+  background-image: url(/assets/dog.jpg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding: 150px 0;
+  background-size: cover;
+  margin: 0 !important;
+
+}
+.container.banner {
+  // margin: 0 !important;
+}
+
+
+.banner h1 {
+  margin: 15px;
+  color: #EC0759;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  }
+

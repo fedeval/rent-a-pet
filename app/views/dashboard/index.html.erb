@@ -1,8 +1,41 @@
-<div class="container">
-  <br>
-  <%= link_to "My Pets", dashboard_index_path(view: "pets"), class: 'btn btn-primary' %>  <%= link_to "My Bookings", dashboard_index_path(view: "bookings") , class: 'btn btn-primary' %>
-  <br><br> 
-  <%= render 'pets' if params[:view] == 'pets' %>
-  <%= render 'bookings' if params[:view] == 'bookings' %>
-  <%= link_to 'All Pets', pets_path %>
+<div class="dashboard-wrapper">
+  
+  <div class="container">
+
+    <div class="dashboard-main">
+      
+      <div class="dashboard-profile">
+        <%= image_tag 'user_placeholder.jpg', id: 'dashboard-avatar' %>
+        <div class="user-info-card">
+          <p><%= @user.first_name %> <%= @user.last_name %></p>
+          <div class="user-icons">
+            <ul class="list-inline">
+              <li class="list-inline-item"><i class="fas fa-paw"></i> <%= @user.pets.count %></li>
+              <li class="list-inline-item"><i class="far fa-calendar-alt"></i> <%= @user.bookings.count %></li>
+              <li class="list-inline-item"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-body">
+        
+        <div class="dashboard-header">
+
+          <div class="dashboard-buttons">
+            <%= link_to "My Pets", dashboard_index_path(view: "pets"), class: "btn-dashboard #{'active' if params[:view] == 'pets'}" %>  <%= link_to "My Bookings", dashboard_index_path(view: "bookings") , class: "btn-dashboard #{'active' if params[:view] == 'bookings'}" %>
+          </div>
+        </div>
+        
+        <div class="dashboard-window">
+          <%= render 'pets' if params[:view] == 'pets' %>
+          <%= render 'bookings' if params[:view] == 'bookings' %>  
+        </div>
+      </div>
+    </div>
+      
+      <%= link_to 'Back to all pets', pets_path, class: 'btn main-btn' %>
+      
+    </div>
+  </div>
 </div>

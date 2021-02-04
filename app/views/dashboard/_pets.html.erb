@@ -1,31 +1,60 @@
-<div class="user-pets">
-    <h2>My pets:</h2>
-    <% @user_pets.each do |pet| %>
-    <ul>
-      <li>
-        <p>Pet: <%= pet.name %></p> 
-        <p>Pet booking requests:</p>
-        <% pet.bookings.each do |booking| %>
-        <ul>
-          <li>
-            <p>From: <%=  booking.start_date %></p>
-            <p>To: <%=  booking.end_date %></p> 
-            <p>Requested By: <%=  "#{booking.user.first_name} #{booking.user.last_name}" %></p> 
-            <p>
-              Request status: <% if booking.confirmed.nil? %> 
-                  <%= 'Pending' %> 
-                <% elsif booking.confirmed %>
-                  <%= 'Accepted' %>  
-                <% else %>
-                  <%= 'Denied' %>
-                <% end %>
-              <%= link_to 'Accept', accept_booking_path(booking) %>
-              <%= link_to 'Deny', deny_booking_path(booking) %>
-            </p>
-          </li>
-        </ul>
+<div class="pets-list">
+  
+  <% @user_pets.each do |pet| %>
+  <div class="pet-booking-info">
+    
+    <div class="pet-dashboard-card">
+      <%= link_to pet_path(pet) do %>
+        <%= cl_image_tag pet.photo.key, id: "pet-avatar", crop: :fill %>
       <% end %>
-      </li>
-    </ul>
-    <% end %>
+      <p id="name"><%= pet.name %></p>
+<!--       <div class="pet-info">
+       <ul class="list-group">
+         <li class="list-group-item pet-demo">
+           <i class="fas fa-paw"></i> <%= pet.species %>
+         </li>
+         <li class="list-group-item pet-demo">
+           <i class="fas fa-baby-carriage"></i> <%= pet.age %> y
+         </li>
+         <li class="list-group-item pet-demo">
+           <i class="fas fa-tags"></i> <%= pet.price_per_day %> €
+         </li>
+       </ul> 
+      </div> -->
+    </div>
+    <div class="pet-bookings-list">
+        <% pet.bookings.each do |booking| %>
+          <div class="pet-booking-item">
+            <div class="booking-dates">
+              <ul class="list-inline">
+                <li class="list-inline-item">From: <%=  booking.start_date %></li>
+                <li class="list-inline-item">To: <%=  booking.end_date %></li>
+              </ul>
+              
+            </div>
+            <div class="booking-status">
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  Requested By: <%=  "#{booking.user.first_name} #{booking.user.last_name}" %>
+                </li>
+                <li class="list-inline-item">
+                  Request status: 
+                  <% if booking.confirmed.nil? %> 
+                    <%= 'Pending' %> 
+                    <%= link_to 'Accept', accept_booking_path(booking) %>
+                    <%= link_to 'Deny', deny_booking_path(booking) %>     
+                  <% elsif booking.confirmed %>
+                    <%= 'Accepted' %>  
+                  <% else %>
+                    <%= 'Denied' %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        <% end %>
+    </div>
   </div>
+  <% end %>
+</div>

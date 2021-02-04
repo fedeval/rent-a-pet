@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "dashboard";
 
 @media(min-width: 992px) {
   .pets-grid {
@@ -45,27 +46,13 @@
   display: block;
   align-items: justify;
   justify-content: space-around;
+  max-width: 400px;
+  text-align: justify;
+  line-height: 1.5 !important;
 }
-.show-card > p {
-  color: rgb(113, 113, 113) !important;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 14px !important;
-  line-height: 20px !important;
-  margin-bottom: 4px !important;
-  margin-top: 0 !important;
-  margin-left: 12px;
-  margin-right: 12px;
-  padding: 0;
-  text-align: left;
-}
+
 .show-card > h5 {
-    color: rgb(34, 34, 34) !important;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    line-height: 20px !important;
-    margin-bottom: 4px !important;
+  line-height: 1.7 !important;
 }
 
 .card-product {

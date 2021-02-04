@@ -24,11 +24,10 @@ require("flatpickr")
 
 // External imports
 import "bootstrap";
-// import "../plugins/flatpickr"
-import { initFlatpickr } from "../plugins/flatpickr"
 
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
+import { initFlatpickr } from "../plugins/flatpickr"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -36,3 +35,4 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initMapbox();
 });
+

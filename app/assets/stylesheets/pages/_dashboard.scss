@@ -4,30 +4,89 @@
 
 .dashboard-main {
   display: flex;
+  margin-bottom: 16px;
+}
+
+.dashboard-profile {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.user-info-card {
+  margin-top: 16px;
+  p {
+    font-weight: bold;
+  }
+}
+
+.user-icons {
+  text-align: center;
+}
+
+.dashboard-body {
+  flex-grow: 1;
+  margin-left: 20px;
+  background-color: white;
+  padding: 16px;
+}
+
+.dashboard-buttons {
+  display: flex;
+  margin-bottom: 15px;
 }
 
 .btn-dashboard {
-  color: white;
-  background-color: #ef5466;
-  border: 2px solid;
-  border-radius: 35px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 14px 30px;
-  position: relative;
-  text-align: center;
-  -webkit-transition-duration: .15s;
-  transition-duration: .15s;
   text-decoration: none;
+  color: grey;
+  padding: 10px 0;
+  margin-right: 10px;
 }
+
+.btn-dashboard:hover {
+  color: black;
+}
+
+.btn-dashboard.active {
+  color: black;
+  font-weight: bold;
+  border-bottom: solid 4px rgb(50,50,50);
+}
+
+.pet-booking-info {
+  display: flex;
+  border: 1px solid rgb(200,200,200);
+  border-radius: 5px;
+  margin-bottom: 10px;
+} 
+
+.pet-dashboard-card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pet-demo {
+  border: none;
+  padding: 0;
+}
+
 
 #dashboard-avatar {
-  height: 100px;
-  width: 100px;
+  height: 160px;
+  width: 160px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
+#pet-avatar {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 

@@ -20,17 +20,17 @@
         <%= simple_form_for [@pet, @booking] do |f| %>
           <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
           <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.button :submit, "Book your friend now!", class: "main-btn" %>
+          <%= f.button :submit, "Book your friend now!", class: "main-btn", style: "width: 100%" %>
         <% end %>
       </div>
-        <br>
+<!--         <br>
         <p style="width: 400px; margin: 0 auto;"><%= @pet.name %> is already booked on the following dates:</p>
         <% @pet.bookings.each do |booking| %>
         <p style="width: 400px; margin: 0 auto;">From: <%= booking.start_date %> to: <%= booking.end_date %></p>
-        <% end %>
+        <% end %> -->
     </div>
 
   </div>
   <br>
-  <%= link_to 'Back to all pets', pets_path %>
+  <%= link_to 'Back to all pets', pets_path, class: "main-btn" %>
 </div>

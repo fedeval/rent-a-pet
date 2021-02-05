@@ -11,12 +11,13 @@
 
     </div>
     <div class="pet-bookings-list">
-        <% pet.bookings.each do |booking| %>
+        <% pet.bookings.each_with_index do |booking, index| %>
           <div class="pet-booking-item">
             <div class="booking-dates">
+              <p><strong>Booking # <%= index + 1 %></strong></p>
               <ul class="list-inline">
-                <li class="list-inline-item">From: <%=  booking.start_date %></li>
-                <li class="list-inline-item">To: <%=  booking.end_date %></li>
+                <li class="list-inline-item">From: <%=  booking.start_date.strftime('%A, %b %d') %></li>
+                <li class="list-inline-item">To: <%=  booking.end_date.strftime('%A, %b %d') %></li>
               </ul>
               
             </div>
@@ -29,8 +30,8 @@
                   Request status: 
                   <% if booking.confirmed.nil? %> 
                     <%= 'Pending' %> 
-                    <%= link_to 'Accept', accept_booking_path(booking) %>
-                    <%= link_to 'Deny', deny_booking_path(booking) %>     
+                    <%= link_to 'Accept', accept_booking_path(booking), class: "btn-acd" %>
+                    <%= link_to 'Deny', deny_booking_path(booking), class: "btn-acd" %>     
                   <% elsif booking.confirmed %>
                     <%= 'Accepted' %>  
                   <% else %>

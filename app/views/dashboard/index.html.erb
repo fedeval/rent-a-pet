@@ -1,6 +1,4 @@
 <div class="dashboard-wrapper">
-  
-  <div class="container">
 
     <div class="dashboard-main">
       
@@ -10,8 +8,8 @@
           <p><%= @user.first_name %> <%= @user.last_name %></p>
           <div class="user-icons">
             <ul class="list-inline">
-              <li class="list-inline-item"><i class="fas fa-paw"></i> <%= @user.pets.count %></li>
-              <li class="list-inline-item"><i class="far fa-calendar-alt"></i> <%= @user.bookings.count %></li>
+              <li class="list-inline-item"><i class="fas fa-dog"></i> <%= @user.pets.count %></li>
+              <li class="list-inline-item"><i class="fas fa-calendar-check"></i> <%= @user.bookings.count %></li>
               <li class="list-inline-item"></li>
             </ul>
           </div>
@@ -37,5 +35,4 @@
       <%= link_to 'Back to all pets', pets_path, class: 'btn main-btn' %>
       
     </div>
-  </div>
 </div>

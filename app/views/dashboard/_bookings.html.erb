@@ -1,21 +1,35 @@
-  <div class="user-bookings">
-    <h2>My bookings:</h2>
-    <% @bookings.each do |booking| %>
-    <ul>
-      <li>
-        <p>From: <%=  booking.start_date %></p>
-        <p>To: <%=  booking.end_date %></p> 
-        <p>Pet: <%= booking.pet.name %></p>
-        <p>
-          Request status: <% if booking.confirmed.nil? %> 
-            <%= 'Pending' %> 
-          <% elsif booking.confirmed %>
-            <%= 'Accepted' %>  
-          <% else %>
-            <%= 'Denied' %>
-          <% end %>
-        </p>
-      </li>
-    </ul>
-    <% end %>
-  </div>
+<div class="bookings-list">
+  <% @bookings.each do |booking| %>
+    <div class="pet-booking-info">
+      <div class="pet-dashboard-card">
+        <%= link_to pet_path(booking.pet) do %>
+          <%= cl_image_tag booking.pet.photo.key, id: "pet-avatar", crop: :fill %>
+        <% end %>
+        <p id="name"><%= booking.pet.name %></p>
+
+      </div>
+      <div class="pet-bookings-list">
+        <div class="pet-booking-item" style="height: 100%">
+
+          <div class="booking-data" style="align-self: flex-start;">
+            <p class="booking-line"><i class="far fa-clock"></i> <%= booking.start_date.strftime('%A, %b %d') %> - <%=  booking.end_date.strftime('%A, %b %d') %></p>
+            <p class="booking-line"><i class="fas fa-paw"></i> <%= booking.pet.species %></p>   
+            <p class="booking-line"><i class="far fa-calendar-alt"></i>  <%= booking.pet.age %> y.o.</p>
+          </div>
+          
+          <div class="booking-status">
+            <% if booking.confirmed.nil? %> 
+              <p class="booking-line"><i class="far fa-question-circle"></i> <%= 'Pending' %></p> 
+            <% elsif booking.confirmed %>
+              <p class="booking-line"><i class="far fa-check-circle"></i> <%= 'Accepted' %></p>  
+            <% else %>
+              <p class="booking-line"><i class="fas fa-times-circle"></i> <%= 'Denied' %></p>
+            <% end %>       
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  <% end %>
+</div>

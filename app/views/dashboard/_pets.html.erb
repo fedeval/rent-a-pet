@@ -8,19 +8,7 @@
         <%= cl_image_tag pet.photo.key, id: "pet-avatar", crop: :fill %>
       <% end %>
       <p id="name"><%= pet.name %></p>
-<!--       <div class="pet-info">
-       <ul class="list-group">
-         <li class="list-group-item pet-demo">
-           <i class="fas fa-paw"></i> <%= pet.species %>
-         </li>
-         <li class="list-group-item pet-demo">
-           <i class="fas fa-baby-carriage"></i> <%= pet.age %> y
-         </li>
-         <li class="list-group-item pet-demo">
-           <i class="fas fa-tags"></i> <%= pet.price_per_day %> €
-         </li>
-       </ul> 
-      </div> -->
+
     </div>
     <div class="pet-bookings-list">
         <% pet.bookings.each do |booking| %>

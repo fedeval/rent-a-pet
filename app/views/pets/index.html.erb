@@ -1,4 +1,3 @@
-<!-- <h1>Pets!!!</h1> -->
 <div class="main-container">
   <div class="pets-grid">
     <% @pets.each do |pet| %>
@@ -8,10 +7,20 @@
           <div class="card-product-infos">
              <h2><%= link_to pet.name, pet_path(pet) %> |</h2>
             <p> <%= link_to "Delete", pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <div class="grid-container">
+    <div class="pets-grid">
+      <% @pets.each do |pet| %>
+
+          <div class="card-product">
+            <%= cl_image_tag pet.photo.key, height:120, width: 120, crop: :fill %>
+            <div class="card-product-infos">
+               <h2><%= link_to pet.name, pet_path(pet) %></h2>
+            </div>
           </div>
-        </div>
-    <% end %>
-<%= link_to "New pet", new_pet_path(@pet) %>
+      <% end %>
+    </div>
+    <%= link_to "Add your pet!", new_pet_path(@pet), class: "main-btn", id: "new-btn" %>
+    
   </div>
 
   <div id="map"

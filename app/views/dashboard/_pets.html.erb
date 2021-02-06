@@ -8,48 +8,31 @@
         <%= cl_image_tag pet.photo.key, id: "pet-avatar", crop: :fill %>
       <% end %>
       <p id="name"><%= pet.name %></p>
-<!--       <div class="pet-info">
-       <ul class="list-group">
-         <li class="list-group-item pet-demo">
-           <i class="fas fa-paw"></i> <%= pet.species %>
-         </li>
-         <li class="list-group-item pet-demo">
-           <i class="fas fa-baby-carriage"></i> <%= pet.age %> y
-         </li>
-         <li class="list-group-item pet-demo">
-           <i class="fas fa-tags"></i> <%= pet.price_per_day %> €
-         </li>
-       </ul> 
-      </div> -->
+
     </div>
     <div class="pet-bookings-list">
-        <% pet.bookings.each do |booking| %>
+        <% pet.bookings.each_with_index do |booking, index| %>
           <div class="pet-booking-item">
-            <div class="booking-dates">
-              <ul class="list-inline">
-                <li class="list-inline-item">From: <%=  booking.start_date %></li>
-                <li class="list-inline-item">To: <%=  booking.end_date %></li>
-              </ul>
-              
+            <div class="booking-data">
+              <p><strong>Booking # <%= index + 1 %></strong></p>
+              <p class="booking-line"><i class="far fa-clock"></i> <%=  booking.start_date.strftime('%A, %b %d') %> - <%=  booking.end_date.strftime('%A, %b %d') %></p>    
+              <p class="booking-line"><i class="fas fa-user-circle"></i> <%=  "#{booking.user.first_name} #{booking.user.last_name}" %></p>
             </div>
             <div class="booking-status">
-              <ul class="list-inline">
-                <li class="list-inline-item">
-                  Requested By: <%=  "#{booking.user.first_name} #{booking.user.last_name}" %>
-                </li>
-                <li class="list-inline-item">
-                  Request status: 
-                  <% if booking.confirmed.nil? %> 
-                    <%= 'Pending' %> 
-                    <%= link_to 'Accept', accept_booking_path(booking) %>
-                    <%= link_to 'Deny', deny_booking_path(booking) %>     
-                  <% elsif booking.confirmed %>
-                    <%= 'Accepted' %>  
-                  <% else %>
-                    <%= 'Denied' %>
-                  <% end %>
-                </li>
-              </ul>
+                  <p class="booking-line">
+                    <% if booking.confirmed.nil? %> 
+                      <p>
+                        <i class="far fa-question-circle"></i> <%= 'Pending' %> 
+                        <%= link_to 'Accept', accept_booking_path(booking), class: "btn-acd" %>
+                        <%= link_to 'Deny', deny_booking_path(booking), class: "btn-acd" %>     
+                      </p>
+                    <% elsif booking.confirmed %>
+                      <i class="far fa-check-circle"></i> <%= 'Accepted' %>  
+                    <% else %>
+                      <i class="fas fa-times-circle"></i> <%= 'Denied' %>
+                    <% end %>
+                  </p>
+
             </div>
 
           </div>

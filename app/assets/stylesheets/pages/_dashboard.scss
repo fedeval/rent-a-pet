@@ -1,5 +1,6 @@
 .dashboard-wrapper {
   padding: 16px;
+  margin: 0 40px;
 }
 
 .dashboard-main {
@@ -47,20 +48,22 @@
 }
 
 .btn-dashboard:hover {
-  color: black;
+  color: #EF5466;
+  text-decoration: none;
 }
 
 .btn-dashboard.active {
-  color: black;
+  color: #EF5466;
   font-weight: bold;
-  border-bottom: solid 4px rgb(50,50,50);
+  border-bottom: solid 4px #EF5466;
 }
 
 .pet-booking-info {
   display: flex;
-  border: 1px solid rgb(200,200,200);
   border-radius: 5px;
   margin-bottom: 10px;
+  border-color: #EF5466;
+  box-shadow: 2px 2px 5px #EF5466;
 } 
 
 .pet-dashboard-card {
@@ -70,11 +73,47 @@
   align-items: center;
 }
 
-.pet-demo {
-  border: none;
-  padding: 0;
+.pet-bookings-list {
+  flex-grow: 1;
+  padding: 10px 10px 10px 0;
 }
 
+.pet-booking-item {
+  background-color: #EF5466;
+  flex-grow: 1;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  border: thick double white;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.pet-booking-item:last-child {
+  margin-bottom: 0;
+}
+
+.booking-line {
+  margin: 5px;
+}
+
+.btn-acd {
+  text-decoration: none;
+  color: #EF5466;
+  background-color: white;
+  border-radius: 20px;
+  padding: 6px;
+  border: 1px solid #EF5466;
+}
+
+.btn-acd:hover {
+  text-decoration: none;
+  // font-weight: bold;
+  color: black;
+  border: 1px solid black;
+}
 
 #dashboard-avatar {
   height: 160px;

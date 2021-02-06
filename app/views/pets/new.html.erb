@@ -1,11 +1,13 @@
-<%= simple_form_for @pet do |f| %>
-  <%= f.input :name %>
-  <%= f.input :species, collection: Pet::SPECIES %>
-  <%= f.input :age %>
-  <%= f.input :description%>
-  <%= f.input :price_per_day %>
-  <%= f.input :location %>
-  <%= f.input :available %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit 'Create a pet!', class: 'btn btn-primary' %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @pet do |f| %>
+    <%= f.input :name %>
+    <%= f.input :species, collection: Pet::SPECIES %>
+    <%= f.input :age %>
+    <%= f.input :description%>
+    <%= f.input :price_per_day %>
+    <%= f.input :location %>
+    <%= f.input :available %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit 'Create a pet!', class: 'main-btn', style: 'width: 100%;' %>
+  <% end %>  
+</div>

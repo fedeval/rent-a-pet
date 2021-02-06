@@ -18,16 +18,15 @@ class BookingsController < ApplicationController
   end
 
   def accept
-    @booking.confirmed = true
-    @booking.save
-    
+    # @booking.confirmed = true
+    @booking.update(confirmed: true)
+
     authorize @booking
     redirect_to dashboard_index_path(view: 'pets')
   end
 
   def deny
-    @booking.confirmed = false
-    @booking.save
+    @booking.update(confirmed: false)
 
     authorize @booking
     redirect_to dashboard_index_path(view: 'pets')

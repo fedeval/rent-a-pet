@@ -27,12 +27,14 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
-import { initFlatpickr } from "../plugins/flatpickr"
+// import { initFlatpickr } from "../plugins/flatpickr"
+import { toggleDateInputs } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initFlatpickr();
+  // initFlatpickr();
   initMapbox();
+  toggleDateInputs();
 });
 

@@ -17,4 +17,10 @@ class Pet < ApplicationRecord
   validates :price_per_day, presence: true, numericality: { greater_than: 0 }
   validates :location, presence: true
   validates :available, presence: true
+
+  def unavailable_dates
+    bookings.pluck(:start_date, :end_date).map do |range|
+      { from: range[0], to: range[1] }
+    end
+  end
 end

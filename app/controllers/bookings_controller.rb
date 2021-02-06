@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to pet_path(@pet)
     else
-      render :new
+      render 'pets/show'
     end
     authorize @booking
   end

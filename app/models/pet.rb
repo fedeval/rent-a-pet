@@ -1,4 +1,10 @@
 class Pet < ApplicationRecord
+  pg_search_scope :search_by_species,
+  against: [ :species],
+  using: {
+    tsearch: { prefix: true } 
+  }
+
   SPECIES = %w[Cat Dog Monkey Lizard Snake Koala Turtle Fish Hamster Rabbit Fox].freeze
 
   belongs_to :user

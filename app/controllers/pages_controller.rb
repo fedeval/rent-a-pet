@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
   def home
-    @pets = Pet.all
+    @pets = policy_scope(Pet)
   end
 end

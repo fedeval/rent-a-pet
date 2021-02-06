@@ -3,7 +3,6 @@ class Booking < ApplicationRecord
   belongs_to :pet, counter_cache: true
 
   validates :start_date, :end_date, presence: true, availability: true
-  # validates :end_date, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :user_id, presence: true
   validates :pet_id, presence: true

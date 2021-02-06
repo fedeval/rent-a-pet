@@ -18,7 +18,6 @@ class BookingsController < ApplicationController
   end
 
   def accept
-    # @booking.confirmed = true
     @booking.update(confirmed: true)
 
     authorize @booking

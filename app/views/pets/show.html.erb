@@ -19,7 +19,7 @@
         <div class="widget-content" data-unavailable="<%= @pet.unavailable_dates.to_json %>">
           <div class="dates">
             <%= simple_form_for [@pet, @booking] do |f| %>
-              <%= f.input :start_date, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+              <%= f.input :start_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
               <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
               <%= f.button :submit, "Book your friend now!", class: "main-btn", style: "width: 100%" %>
             <% end %>

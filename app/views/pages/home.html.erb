@@ -12,25 +12,45 @@
     <h2>Find a pet</h2>
     <p>There are so many <br>
      lovely pets here. <br>
-     There is also one for you.<br> 
-     Take a look!<br>
+     There is a perfect <br>
+     one for you as well. <br> 
+     Take a Look!
     </p>
   </div>
   <div class = "card"> 
     <h2>Send a request</h2>
-    <p>When you have <br>
-     found the perfect 
-     animal  
+    <p>When you have found the<br>
+     perfect pet for you - just<br>
+     push the button to book it.   
     </p>
   </div>
   <div class = "card"> 
-    <h2>Pick up the pet</h2>
-    <p> Its time to shine and picking up your favorite pet <br>
+    <h2>Pick up a pet</h2>
+    <p> Its time to shine! <br>
+    Pick up your booked <br>
+    pet and have the best <br>
+    time of your life.
     </p>
   </div>
 </div>
 
 <h1>Pets of the day</h1>
+
+<div class="main-container">
+  <div class="pets-grid">
+    <% @pets.sample(3).each do |pet| %>
+    
+    <div class="card-product">
+         
+          <div class="card-product-infos">
+             <h2><%= link_to pet.name, pet_path(pet) %> |</h2>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+
 
 
 

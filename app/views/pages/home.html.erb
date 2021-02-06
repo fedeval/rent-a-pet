@@ -36,18 +36,19 @@
 
 <h1>Pets of the day</h1>
 
-<div class="main-container">
-  <div class="pets-grid">
+<div class="container">
+   <div class="pets-grid">
     <% @pets.sample(3).each do |pet| %>
-    
-    <div class="card-product">
-         
-          <div class="card-product-infos">
-             <h2><%= link_to pet.name, pet_path(pet) %> |</h2>
+      <div class="card-trip">
+        <%= cl_image_tag pet.photo.key, height:240, width: 240, crop: :fill %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= link_to pet.name, pet_path(pet) %></h2>
           </div>
+          <h2 class="card-trip-pricing"><%= pet.price_per_day %> € / day</h2>
         </div>
+      </div>
     <% end %>
-  </div>
 </div>
 
 

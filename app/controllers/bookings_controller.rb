@@ -12,22 +12,20 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to pet_path(@pet)
     else
-      render :new
+      render 'pets/show'
     end
     authorize @booking
   end
 
   def accept
-    @booking.confirmed = true
-    @booking.save
-    
+    @booking.update(confirmed: true)
+
     authorize @booking
     redirect_to dashboard_index_path(view: 'pets')
   end
 
   def deny
-    @booking.confirmed = false
-    @booking.save
+    @booking.update(confirmed: false)
 
     authorize @booking
     redirect_to dashboard_index_path(view: 'pets')

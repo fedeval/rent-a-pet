@@ -1,4 +1,12 @@
 <div class="main-container">
+  <div class="pets-grid">
+    <% @pets.each do |pet| %>
+    
+        <div class="card-product">
+          
+          <div class="card-product-infos">
+             <h2><%= link_to pet.name, pet_path(pet) %> |</h2>
+            <p> <%= link_to "Delete", pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' } %></p>
   <div class="grid-container">
     <div class="pets-grid">
       <% @pets.each do |pet| %>

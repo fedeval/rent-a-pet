@@ -1,2 +1,4 @@
-<h2>🐈 <%= pet.name %></h2>
-<p>🌎 <%= pet.location %></p>
+<h2><%= link_to pet_path(pet) do %>
+      <%= cl_image_tag pet.photo.key, id: "pet-avatar", crop: :fill %>
+    <% end %> <%= link_to pet.name, pet_path(pet) %></h2>
+<p><%= pet.location %></p>

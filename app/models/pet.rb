@@ -1,5 +1,5 @@
 class Pet < ApplicationRecord
-  SPECIES = %w[cat dog monkey lizard snake koala].freeze
+  SPECIES = %w[Cat Dog Monkey Lizard Snake Koala Turtle Fish Hamster Rabbit Fox].freeze
 
   belongs_to :user
 

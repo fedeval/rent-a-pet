@@ -4,10 +4,14 @@
   <div class="pet-booking-info">
     
     <div class="pet-dashboard-card">
-      <%= link_to pet_path(pet) do %>
-        <%= cl_image_tag pet.photo.key, id: "pet-avatar", crop: :fill %>
-      <% end %>
-      <p id="name"><%= pet.name %></p>
+      
+      <div class="pet-dashboard-card-info">
+        <%= link_to pet_path(pet) do %>
+          <%= cl_image_tag pet.photo.key, id: "pet-avatar", crop: :fill %>
+        <% end %>
+        <p id="name"><%= pet.name %></p>
+      </div>
+      
       <%= link_to 'Remove', pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-acd'  %>
     </div>
     

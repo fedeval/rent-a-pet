@@ -1,29 +1,35 @@
-<!-- <div class ="search">
-  <%= form_tag pets_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a pet" %>
-  <% end %>
-</div> -->
-
 <div class="main-container">
-        <div class="grid-container">
-          <div class="pets-grid">
-          <% @pets.each do |pet| %>
-            <div class="card-trip">
-              <%= cl_image_tag pet.photo.key, height:240, width: 240, crop: :fill %>
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= link_to pet.name, pet_path(pet) %></h2>
-                </div>
-                <h2 class="card-trip-pricing"><%= pet.price_per_day %> € / day</h2>
-              </div>
-            </div>
+  <div class="grid-container">
+    <div class="form-and-grid">
+      <div class="index-form d-flex justify-content-center">
+        <div class ="search">
+          <%= form_tag pets_path, id: "search-form", method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              style: "width: 300px",
+              placeholder: "Search by species or location..." %>
+            <%= submit_tag "Search", class: "search-btn" %>
           <% end %>
+        </div> 
+        <%= link_to "All Pets", pets_path, class: "search-btn" %>
+       </div>
+        <div class="pets-grid">
+        <% @pets.each do |pet| %>
+          <div class="card-trip">
+            <%= cl_image_tag pet.photo.key, height:240, width: 240, crop: :fill %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= link_to pet.name, pet_path(pet) %></h2>
+              </div>
+              <h2 class="card-trip-pricing"><%= pet.price_per_day %> € / day</h2>
+            </div>
           </div>
-          <%= link_to "Add your pet!", new_pet_path(@pet), class: "main-btn", id: "new-btn" %>
+        <% end %>
         </div>
+     </div>
+    <%= link_to "Add your pet!", new_pet_path(@pet), class: "main-btn", id: "new-btn" %>
+  </div>
 
   <div id="map"
      style="width: 40%; height: 90vh;"

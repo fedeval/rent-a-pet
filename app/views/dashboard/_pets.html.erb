@@ -12,12 +12,15 @@
     </div>
     <div class="pet-bookings-list">
         <% pet.bookings.each_with_index do |booking, index| %>
+          
           <div class="pet-booking-item">
+            
             <div class="booking-data">
               <p><strong>Booking # <%= index + 1 %></strong></p>
               <p class="booking-line"><i class="far fa-clock"></i> <%=  booking.start_date.strftime('%A, %b %d') %> - <%=  booking.end_date.strftime('%A, %b %d') %></p>    
               <p class="booking-line"><i class="fas fa-user-circle"></i> <%=  "#{booking.user.first_name} #{booking.user.last_name}" %></p>
             </div>
+            
             <div class="booking-status">
                   <p class="booking-line">
                     <% if booking.confirmed.nil? %> 
@@ -32,9 +35,7 @@
                       <i class="fas fa-times-circle"></i> <%= 'Denied' %>
                     <% end %>
                   </p>
-
             </div>
-
           </div>
         <% end %>
     </div>

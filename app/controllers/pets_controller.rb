@@ -46,7 +46,7 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     authorize @pet
     @pet.destroy
-    redirect_to pets_path
+    redirect_to dashboard_index_path(view: 'pets')
   end
 
   private

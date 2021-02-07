@@ -1,16 +1,17 @@
  <div class="banner">
-    <h1>Rent a pet </h1>
-    <div class="d-flex justify-content-center">
-      <div class ="search">
-      <%= form_tag pets_path, method: :get do %>
+  <h1>Rent a pet </h1>
+  <div class="d-flex justify-content-center">
+    <div class ="search">
+      <%= form_tag pets_path, id: "search-form", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Find a pet" %>
+          style: "width: 300px",
+          placeholder: "Search by species or location..." %>
+        <%= submit_tag "Search", class: "search-btn" %>
       <% end %>
-      </div> 
-      <%= link_to "See all pets", pets_path, class: "btn btn-outline-danger" %>
-  </div>
+    </div> 
+   </div>
 </div>
 
 

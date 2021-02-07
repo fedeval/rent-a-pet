@@ -8,8 +8,9 @@
         <%= cl_image_tag pet.photo.key, id: "pet-avatar", crop: :fill %>
       <% end %>
       <p id="name"><%= pet.name %></p>
-
+      <%= link_to 'Remove', pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-acd'  %>
     </div>
+    
     <div class="pet-bookings-list">
         <% pet.bookings.each_with_index do |booking, index| %>
           

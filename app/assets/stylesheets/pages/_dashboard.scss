@@ -71,6 +71,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.pet-dashboard-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pet-bookings-list {

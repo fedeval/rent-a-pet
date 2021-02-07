@@ -1,7 +1,15 @@
  <div class="banner">
     <h1>Rent a pet </h1>
     <div class="d-flex justify-content-center">
-    <%= link_to "See all pets", pets_path, class: "btn btn-outline-danger" %>
+      <div class ="search">
+      <%= form_tag pets_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a pet" %>
+      <% end %>
+      </div> 
+      <%= link_to "See all pets", pets_path, class: "btn btn-outline-danger" %>
   </div>
 </div>
 

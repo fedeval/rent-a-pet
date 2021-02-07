@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+#search-form {
+  display: flex;
+  align-items: center;
+  margin-right: 2px;
+}
+
+.search-btn {
+  color: white;
+  background-color: #EF5466;
+  padding: 5px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: rgb(133, 133, 133);
+  border-image: initial;
+}
+
+.search-btn:hover {
+  text-decoration: none;
+  color: #EF5466;
+  background-color: white;
+}

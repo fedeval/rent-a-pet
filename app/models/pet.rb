@@ -17,8 +17,13 @@ class Pet < ApplicationRecord
   validates :price_per_day, presence: true, numericality: { greater_than: 0 }
   validates :location, presence: true
   validates :available, presence: true
-  
-  # pg_search_scope :search_by_species, against: [:species], using: { tsearch: { prefix: true } }
+ 
+  include PgSearch::Model
+  pg_search_scope :search_by_location_and_species,
+                  against: [:location, :species],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 
   def unavailable_dates
     bookings.pluck(:start_date, :end_date).map do |range|

@@ -18,7 +18,6 @@ addresses = [
             "Schönhauser Allee 180, 10119 Berlin, Germany",
             "Saarbrücker Str. 37a, 10405 Berlin, Germany"
 ]
-c = 0
 
 puts "Cleaning database..."
 Pet.destroy_all
@@ -43,7 +42,7 @@ cat2 = Pet.create!(
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
-    location: addresses[0],
+    location: addresses[1],
     user_id: 1,
 )
 cat2.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat2.jpg')), filename: 'cat2.jpg', content_type: 'image/jpg')
@@ -55,7 +54,7 @@ cat3 = Pet.create!(
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
-    location: addresses[0],
+    location: addresses[2],
     user_id: 1,
 )
 cat3.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat3.jpg')
@@ -68,57 +67,69 @@ cat4 = Pet.create!(
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
-    location: addresses[0],
+    location: addresses[3],
     user_id: 1,
 )
 cat4.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat4.jpg')), filename: 'cat4.jpg', content_type: 'image/jpg')
 
 dog = Pet.create!(
     name: Faker::Name.name,
-    species: cat,
+    species: dog,
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
-    location: addresses[0],
+    location: addresses[4],
     user_id: 1,
 )
 dog.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog.jpg')), filename: 'dog.jpg', content_type: 'image/jpg')
 
 dog1 = Pet.create!(
     name: Faker::Name.name,
-    species: cat,
+    species: dog,
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
-    location: addresses[0],
+    location: addresses[5],
     user_id: 1,
 )
 dog1.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog1.jpg')), filename: 'dog1.jpg', content_type: 'image/jpg')
 
 dog3 = Pet.create!(
     name: Faker::Name.name,
-    species: cat,
+    species: dog,
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
-    location: addresses[0],
+    location: addresses[6],
     user_id: 1,
 )
 dog3.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog3.jpg')), filename: 'dog3.jpg', content_type: 'image/jpg')
 
 dog4 = Pet.create!(
     name: Faker::Name.name,
-    species: cat,
+    species: dog,
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
-    location: addresses[0],
+    location: addresses[7],
     user_id: 1,
 )
 dog4.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog4.jpg')), filename: 'dog4.jpg', content_type: 'image/jpg')
+
+snake = Pet.create!(
+    name: Faker::Name.name,
+    species: snake,
+    available: true,
+    age: [1..15].sample,
+    description: Faker::Lorem.sentence(word_count: 10),
+    price_per_day: [5..50].sample,
+    location: addresses[8],
+    user_id: 1,
+)
+snake.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/snake.jpg')), filename: 'snake.jpg', content_type: 'image/jpg')
 
 puts "Finished!"

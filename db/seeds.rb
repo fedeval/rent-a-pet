@@ -40,7 +40,7 @@ cat1 = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[0],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 cat1.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat1.jpg')), filename: 'cat1.jpg', content_type: 'image/jpg')
 
@@ -52,7 +52,7 @@ cat2 = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[1],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 cat2.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat2.jpg')), filename: 'cat2.jpg', content_type: 'image/jpg')
 
@@ -64,7 +64,7 @@ cat3 = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[2],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 cat3.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat3.jpg')
     ), filename: 'cat3.jpg', content_type: 'image/jpg')
@@ -77,7 +77,7 @@ cat4 = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[3],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 cat4.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat4.jpg')), filename: 'cat4.jpg', content_type: 'image/jpg')
 
@@ -89,7 +89,7 @@ dog = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[4],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 dog.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog.jpg')), filename: 'dog.jpg', content_type: 'image/jpg')
 
@@ -101,7 +101,7 @@ dog1 = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[5],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 dog1.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog1.jpg')), filename: 'dog1.jpg', content_type: 'image/jpg')
 
@@ -113,7 +113,7 @@ dog3 = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[6],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 dog3.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog3.jpg')), filename: 'dog3.jpg', content_type: 'image/jpg')
 
@@ -125,7 +125,7 @@ dog4 = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[7],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 dog4.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog4.jpg')), filename: 'dog4.jpg', content_type: 'image/jpg')
 
@@ -137,7 +137,7 @@ snake = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[8],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 snake.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/snake.jpg')), filename: 'snake.jpg', content_type: 'image/jpg')
 
@@ -149,7 +149,7 @@ hamster1 = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[9],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 hamster1.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/hamster1.jpg')), filename: 'hamster1.jpg', content_type: 'image/jpg')
 
@@ -161,7 +161,7 @@ hamster2 = Pet.create!(
     description: Faker::Lorem.sentence(word_count: 10),
     price_per_day: [5..50].sample,
     location: addresses[10],
-    user_id: User.sample,
+    user_id: User.all.sample,
 )
 hamster2.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/hamster2.jpg')), filename: 'hamster2.jpg', content_type: 'image/jpg')
 

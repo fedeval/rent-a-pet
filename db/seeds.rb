@@ -25,7 +25,7 @@ Pet.destroy_all
 puts "Creating pets..."
 cat1 = Pet.create!(
     name: Faker::Name.name,
-    species: cat,
+    species: 'Cat',
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
@@ -37,7 +37,7 @@ cat1.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat1.j
 
 cat2 = Pet.create!(
     name: Faker::Name.name,
-    species: cat,
+    species: 'Cat',
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
@@ -49,7 +49,7 @@ cat2.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat2.j
 
 cat3 = Pet.create!(
     name: Faker::Name.name,
-    species: cat,
+    species: 'Cat',
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
@@ -62,7 +62,7 @@ cat3.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat3.j
 
 cat4 = Pet.create!(
     name: Faker::Name.name,
-    species: cat,
+    species: 'Cat',
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
@@ -74,7 +74,7 @@ cat4.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/cat4.j
 
 dog = Pet.create!(
     name: Faker::Name.name,
-    species: dog,
+    species: 'Dog',
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
@@ -86,7 +86,7 @@ dog.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog.jpg
 
 dog1 = Pet.create!(
     name: Faker::Name.name,
-    species: dog,
+    species: 'Dog',
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
@@ -98,7 +98,7 @@ dog1.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog1.j
 
 dog3 = Pet.create!(
     name: Faker::Name.name,
-    species: dog,
+    species: 'Dog',
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
@@ -110,7 +110,7 @@ dog3.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog3.j
 
 dog4 = Pet.create!(
     name: Faker::Name.name,
-    species: dog,
+    species: 'Dog',
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
@@ -122,7 +122,7 @@ dog4.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/dog4.j
 
 snake = Pet.create!(
     name: Faker::Name.name,
-    species: snake,
+    species: 'Snake',
     available: true,
     age: [1..15].sample,
     description: Faker::Lorem.sentence(word_count: 10),
@@ -131,5 +131,29 @@ snake = Pet.create!(
     user_id: 1,
 )
 snake.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/snake.jpg')), filename: 'snake.jpg', content_type: 'image/jpg')
+
+hamster1 = Pet.create!(
+    name: Faker::Name.name,
+    species: 'Hamster',
+    available: true,
+    age: [1..15].sample,
+    description: Faker::Lorem.sentence(word_count: 10),
+    price_per_day: [5..50].sample,
+    location: addresses[8],
+    user_id: 1,
+)
+hamster1.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/hamster1.jpg')), filename: 'hamster1.jpg', content_type: 'image/jpg')
+
+hamster2 = Pet.create!(
+    name: Faker::Name.name,
+    species: 'Hamster',
+    available: true,
+    age: [1..15].sample,
+    description: Faker::Lorem.sentence(word_count: 10),
+    price_per_day: [5..50].sample,
+    location: addresses[8],
+    user_id: 1,
+)
+hamster2.photo.attach(io: File.open(File.join(Rails.root, '/app/assets/images/hamster2.jpg')), filename: 'hamster2.jpg', content_type: 'image/jpg')
 
 puts "Finished!"

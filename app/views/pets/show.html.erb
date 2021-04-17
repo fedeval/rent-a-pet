@@ -1,8 +1,8 @@
 <div class="container" style="padding-top: 16px;">
   <div class="row">
-    <div class="col-12 col-lg-6">
+    <div class="pet-show-card col-12 col-lg-6">
       <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill, style: "border-radius: 5px;" %>
-      <div class="show-card">
+      <div class="pet-show-details">
         <h3>About <%= @pet.name %></h3>
         <div class="pet-show-description">
           <%= @pet.description %>
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-lg-6">
+    <div class="pet-form col-12 col-lg-6">
       <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
         <h2>Pick your dates</h2>
         <div class="widget-content" data-unavailable="<%= @pet.unavailable_dates.to_json %>">
@@ -36,7 +36,8 @@
         </div>
       </div>
     </div>
+    <div class="show-button">
+      <%= link_to 'Back to all pets', pets_path, class: "main-btn" %>
+    </div>
   </div>
-  <br>
-  <%= link_to 'Back to all pets', pets_path, class: "main-btn" %>
 </div>

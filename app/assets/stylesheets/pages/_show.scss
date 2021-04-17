@@ -1,13 +1,43 @@
+@media (max-width: 991px) {
+  .show-button {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .row  {
+    justify-content: center;
+  }
+
+  .main-btn {
+    width: 100%;
+  }
+
+  .show-button {
+    padding: 0;
+  }
+}
+
 .pet-show-info {
   list-style: none;
   padding: 0;
 }
 
-.show-card {
+.pet-show-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pet-show-details {
   display: block;
   align-items: justify;
   justify-content: space-around;
   max-width: 400px;
   text-align: justify;
   line-height: 1.5 !important;
+}
+
+.show-button {
+  width: 400px;
 }

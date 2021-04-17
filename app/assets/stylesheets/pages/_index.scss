@@ -19,6 +19,10 @@
   .pets-grid {
     grid-template-columns: 1fr;
   }
+
+  #map {
+    display: none;
+  }
 }
 
 .main-container {

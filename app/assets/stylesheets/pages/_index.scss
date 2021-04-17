@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "dashboard";
+@import "show";
 
 @media(min-width: 992px) {
   .pets-grid {
@@ -36,19 +37,6 @@
   display: grid;
   grid-gap: 16px;
   margin: 16px;
-}
-
-.show-card {
-  display: block;
-  align-items: justify;
-  justify-content: space-around;
-  max-width: 400px;
-  text-align: justify;
-  line-height: 1.5 !important;
-}
-
-.show-card > h5 {
-  line-height: 1.7 !important;
 }
 
 .pet-card {

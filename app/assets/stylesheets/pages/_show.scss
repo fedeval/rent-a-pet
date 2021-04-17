@@ -1,0 +1,58 @@
+@media (max-width: 991px) {
+  .row  {
+    justify-content: center;
+  }
+
+  .pet-show-card {
+    align-items: center;
+  }
+
+  .show-button {
+    padding: 20px 0;
+  }
+
+  .main-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .pet-show-card {
+    align-items: end;
+  }
+
+  .show-button {
+    padding: 0 15px;
+  }
+}
+
+.pet-show-info {
+  list-style: none;
+  padding: 0;
+}
+
+.pet-show-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-show-details {
+  display: block;
+  align-items: justify;
+  justify-content: space-around;
+  max-width: 400px;
+  text-align: justify;
+  line-height: 1.5 !important;
+  h3 {
+    padding-top: 15px;
+  }
+}
+
+.pet-show-info {
+  padding-top: 10px;
+}
+
+.show-button {
+  width: 400px;
+}

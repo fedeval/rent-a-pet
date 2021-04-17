@@ -1,3 +1,13 @@
 .pet-show-info {
   list-style: none;
+  padding: 0;
+}
+
+.show-card {
+  display: block;
+  align-items: justify;
+  justify-content: space-around;
+  max-width: 400px;
+  text-align: justify;
+  line-height: 1.5 !important;
 }

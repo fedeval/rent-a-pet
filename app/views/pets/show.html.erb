@@ -4,9 +4,9 @@
       <%= cl_image_tag @pet.photo.key, height: 300, width: 400, crop: :fill, style: "border-radius: 5px;" %>
       <div class="show-card">
         <h3>About <%= @pet.name %></h3>
-        <span class="pet-show-description">
+        <div class="pet-show-description">
           <%= @pet.description %>
-        </span>
+        </div>
         <ul class="pet-show-info">
           <li><i class="fas fa-paw"></i> <%= @pet.species %></li>
           <li><i class="fas fa-tag"></i> <%= @pet.price_per_day %>€ / day</li>
@@ -32,12 +32,10 @@
               <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
               <%= f.button :submit, "Book your friend now!", class: "main-btn", style: "width: 100%" %>
             <% end %>
-            
           </div>
         </div>
       </div>
     </div>
-
   </div>
   <br>
   <%= link_to 'Back to all pets', pets_path, class: "main-btn" %>
